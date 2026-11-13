@@ -1,0 +1,332 @@
+/* ============================================================
+   MORANDI PALETTE OVERRIDES — Kaylee Xiao portfolio
+   Muted, dusty, low-saturation tones with a soft, sweet warmth.
+   Overrides the design-system --site-* tokens. Three palettes,
+   each with a light + dark mode. Default = "Sweet" (rose+sage+cream).
+   Switched via data-palette on <html>; dark via .site-dark.
+   ============================================================ */
+
+/* ---------------- SWEET (default) · LIGHT ---------------- */
+:root {
+  --site-bg:            #EFE6DB;
+  --site-cover-bg:      #ECE0D3;
+  --site-text:          #4C4039;
+  --site-nav-bg:        #D9C5B9;
+  --site-icon:          #4C4039;
+  --site-selected:      #B47C6A;
+  --site-scrolled:      #E3D6C9;
+  --site-container:     #E5D9CC;
+  --site-container2:    #CFD6C8;
+  --site-link:          #A07A6A;
+  --site-link-hover-bg: #C99C8B;
+  --site-footer:        #C2A693;
+  --site-cover-bg:      #ECE0D3;
+  --site-highlight:     #E7C3A2;
+  --site-form-bg:       #CBB9AB;
+  --site-accent:        #B07C6B;
+  --site-accent-press:  #94604F;
+  --site-field-bg:      #F8F2EA;
+  --site-field-border:  #D6C5B7;
+}
+/* ---------------- SWEET · DARK ---------------- */
+:root.site-dark {
+  --site-bg:            #3B3733;
+  --site-cover-bg:      #403A35;
+  --site-text:          #EFE4D8;
+  --site-nav-bg:        #4D453F;
+  --site-icon:          #EFE4D8;
+  --site-selected:      #E0B49F;
+  --site-scrolled:      #47413B;
+  --site-container:     #463F3A;
+  --site-container2:    #3E443C;
+  --site-link:          #E4CFC1;
+  --site-link-hover-bg: #6B5C52;
+  --site-footer:        #2E2B27;
+  --site-highlight:     #C99B79;
+  --site-form-bg:       #524841;
+  --site-accent:        #BC8270;
+  --site-accent-press:  #9E6553;
+  --site-field-bg:      #4A433D;
+  --site-field-border:  #685C53;
+}
+
+/* ---------------- SAGE & STONE · LIGHT ---------------- */
+:root[data-palette="sage"] {
+  --site-bg:            #E7E6DE;
+  --site-cover-bg:      #DEE0D6;
+  --site-text:          #43463E;
+  --site-nav-bg:        #CFD2C5;
+  --site-icon:          #43463E;
+  --site-selected:      #7E9079;
+  --site-scrolled:      #DADBD0;
+  --site-container:     #DBDDD0;
+  --site-container2:    #D5CFC4;
+  --site-link:          #6E7E69;
+  --site-link-hover-bg: #92A287;
+  --site-footer:        #9DA793;
+  --site-highlight:     #C9C19E;
+  --site-form-bg:       #BAC2B0;
+  --site-accent:        #7E9079;
+  --site-accent-press:  #62755E;
+  --site-field-bg:      #F4F4EE;
+  --site-field-border:  #C6C8BB;
+}
+/* ---------------- SAGE & STONE · DARK ---------------- */
+:root[data-palette="sage"].site-dark {
+  --site-bg:            #383A35;
+  --site-cover-bg:      #3D3F39;
+  --site-text:          #E8E8DF;
+  --site-nav-bg:        #474A40;
+  --site-icon:          #E8E8DF;
+  --site-selected:      #AEC0A6;
+  --site-scrolled:      #43453E;
+  --site-container:     #42453D;
+  --site-container2:    #3F423C;
+  --site-link:          #C9D3BF;
+  --site-link-hover-bg: #5F6A58;
+  --site-footer:        #2C2E29;
+  --site-highlight:     #ADA67F;
+  --site-form-bg:       #4C4F45;
+  --site-accent:        #8B9D83;
+  --site-accent-press:  #6E7F66;
+  --site-field-bg:      #45473F;
+  --site-field-border:  #5E6256;
+}
+
+/* ---------------- DUSTY BLUE & CLAY · LIGHT ---------------- */
+:root[data-palette="blue"] {
+  --site-bg:            #E8E4DF;
+  --site-cover-bg:      #DEE2E3;
+  --site-text:          #41454A;
+  --site-nav-bg:        #CCD3D6;
+  --site-icon:          #41454A;
+  --site-selected:      #7E94A3;
+  --site-scrolled:      #DCDDDB;
+  --site-container:     #DCE1E2;
+  --site-container2:    #E0D3C8;
+  --site-link:          #6C828F;
+  --site-link-hover-bg: #90A4B0;
+  --site-footer:        #A2A8AC;
+  --site-highlight:     #D7B49B;
+  --site-form-bg:       #B8C2C7;
+  --site-accent:        #80949F;
+  --site-accent-press:  #61757F;
+  --site-field-bg:      #F5F5F2;
+  --site-field-border:  #C3C9CB;
+}
+/* ---------------- DUSTY BLUE & CLAY · DARK ---------------- */
+:root[data-palette="blue"].site-dark {
+  --site-bg:            #353839;
+  --site-cover-bg:      #393D3F;
+  --site-text:          #E6E7E5;
+  --site-nav-bg:        #444A4C;
+  --site-icon:          #E6E7E5;
+  --site-selected:      #A6BAC6;
+  --site-scrolled:      #3F4142;
+  --site-container:     #3D4143;
+  --site-container2:    #44403B;
+  --site-link:          #BCCAD2;
+  --site-link-hover-bg: #586770;
+  --site-footer:        #2A2D2E;
+  --site-highlight:     #C79E82;
+  --site-form-bg:       #474B4D;
+  --site-accent:        #889BA6;
+  --site-accent-press:  #6A7D88;
+  --site-field-bg:      #424547;
+  --site-field-border:  #595E60;
+}
+
+/* ---------------- TERRACOTTA & INK · LIGHT ---------------- */
+:root[data-palette="clay"] {
+  --site-bg:            #F0E7E0;
+  --site-cover-bg:      #EDE0D6;
+  --site-text:          #4A3B36;
+  --site-nav-bg:        #DEC6B7;
+  --site-icon:          #4A3B36;
+  --site-selected:      #B2604A;
+  --site-scrolled:      #E7DAD0;
+  --site-container:     #E9DCD2;
+  --site-container2:    #D6CCC0;
+  --site-link:          #9C5B47;
+  --site-link-hover-bg: #C9846D;
+  --site-footer:        #BE8A75;
+  --site-highlight:     #E9BE9C;
+  --site-form-bg:       #D3B7A6;
+  --site-accent:        #B2604A;
+  --site-accent-press:  #8F4835;
+  --site-field-bg:      #FAF3ED;
+  --site-field-border:  #DAC4B5;
+}
+/* ---------------- TERRACOTTA & INK · DARK ---------------- */
+:root[data-palette="clay"].site-dark {
+  --site-bg:            #33302E;
+  --site-cover-bg:      #38332F;
+  --site-text:          #F0E3D9;
+  --site-nav-bg:        #4A3E38;
+  --site-icon:          #F0E3D9;
+  --site-selected:      #DE9375;
+  --site-scrolled:      #3D3936;
+  --site-container:     #413A36;
+  --site-container2:    #3A3633;
+  --site-link:          #EAC0AB;
+  --site-link-hover-bg: #6A544A;
+  --site-footer:        #282523;
+  --site-highlight:     #C68A64;
+  --site-form-bg:       #4E423B;
+  --site-accent:        #B96A50;
+  --site-accent-press:  #99513A;
+  --site-field-bg:      #453D39;
+  --site-field-border:  #62534B;
+}
+
+/* ---------------- PLUM & OAT · LIGHT ---------------- */
+:root[data-palette="plum"] {
+  --site-bg:            #EDE7E7;
+  --site-cover-bg:      #E8DFE2;
+  --site-text:          #443A41;
+  --site-nav-bg:        #D3C3CB;
+  --site-icon:          #443A41;
+  --site-selected:      #8A6479;
+  --site-scrolled:      #E3DAD9;
+  --site-container:     #E4DADD;
+  --site-container2:    #DED6C7;
+  --site-link:          #7C5A6C;
+  --site-link-hover-bg: #A3819A;
+  --site-footer:        #AE95A6;
+  --site-highlight:     #DCC7A6;
+  --site-form-bg:       #C6B3BC;
+  --site-accent:        #8A6479;
+  --site-accent-press:  #6C4A5E;
+  --site-field-bg:      #F8F4F4;
+  --site-field-border:  #CFC1C7;
+}
+/* ---------------- PLUM & OAT · DARK ---------------- */
+:root[data-palette="plum"].site-dark {
+  --site-bg:            #363136;
+  --site-cover-bg:      #3A343A;
+  --site-text:          #EFE6E9;
+  --site-nav-bg:        #483F48;
+  --site-icon:          #EFE6E9;
+  --site-selected:      #C39FB5;
+  --site-scrolled:      #403A40;
+  --site-container:     #3F393F;
+  --site-container2:    #413C36;
+  --site-link:          #DCC5D3;
+  --site-link-hover-bg: #61535D;
+  --site-footer:        #2B272B;
+  --site-highlight:     #B9A57F;
+  --site-form-bg:       #4C434B;
+  --site-accent:        #96718A;
+  --site-accent-press:  #79576D;
+  --site-field-bg:      #443E44;
+  --site-field-border:  #5C525B;
+}
+
+/* ---------------- SEA GLASS · LIGHT ---------------- */
+:root[data-palette="seaglass"] {
+  --site-bg:            #E7EBE8;
+  --site-cover-bg:      #DDE6E4;
+  --site-text:          #3C4746;
+  --site-nav-bg:        #C4D5D2;
+  --site-icon:          #3C4746;
+  --site-selected:      #6E9490;
+  --site-scrolled:      #DCE2E0;
+  --site-container:     #DAE3E1;
+  --site-container2:    #E2DDD0;
+  --site-link:          #5F8480;
+  --site-link-hover-bg: #86A9A5;
+  --site-footer:        #97ADAA;
+  --site-highlight:     #D9CBA6;
+  --site-form-bg:       #B3C7C4;
+  --site-accent:        #6E9490;
+  --site-accent-press:  #527672;
+  --site-field-bg:      #F4F7F5;
+  --site-field-border:  #BFCDCA;
+}
+/* ---------------- SEA GLASS · DARK ---------------- */
+:root[data-palette="seaglass"].site-dark {
+  --site-bg:            #313938;
+  --site-cover-bg:      #353E3D;
+  --site-text:          #E5EDEB;
+  --site-nav-bg:        #3F4B4A;
+  --site-icon:          #E5EDEB;
+  --site-selected:      #9CC1BC;
+  --site-scrolled:      #3A4342;
+  --site-container:     #3A4443;
+  --site-container2:    #3E4039;
+  --site-link:          #C2D8D5;
+  --site-link-hover-bg: #556764;
+  --site-footer:        #272E2D;
+  --site-highlight:     #B5A87F;
+  --site-form-bg:       #445150;
+  --site-accent:        #7BA29D;
+  --site-accent-press:  #5C837E;
+  --site-field-bg:      #3D4746;
+  --site-field-border:  #536260;
+}
+
+/* ---------------- OCHRE & OLIVE · LIGHT ---------------- */
+:root[data-palette="ochre"] {
+  --site-bg:            #F0EBDF;
+  --site-cover-bg:      #EDE6D5;
+  --site-text:          #45412F;
+  --site-nav-bg:        #DCD3B7;
+  --site-icon:          #45412F;
+  --site-selected:      #A08540;
+  --site-scrolled:      #E8E1D1;
+  --site-container:     #E9E2CE;
+  --site-container2:    #D5D6C2;
+  --site-link:          #8A7237;
+  --site-link-hover-bg: #B79E5E;
+  --site-footer:        #B7AC80;
+  --site-highlight:     #E0CE93;
+  --site-form-bg:       #CDC4A0;
+  --site-accent:        #A08540;
+  --site-accent-press:  #7F682D;
+  --site-field-bg:      #FAF7EC;
+  --site-field-border:  #D6CDAF;
+}
+/* ---------------- OCHRE & OLIVE · DARK ---------------- */
+:root[data-palette="ochre"].site-dark {
+  --site-bg:            #363429;
+  --site-cover-bg:      #3A382C;
+  --site-text:          #F0EADA;
+  --site-nav-bg:        #474432;
+  --site-icon:          #F0EADA;
+  --site-selected:      #D3BA74;
+  --site-scrolled:      #403D30;
+  --site-container:     #403D2F;
+  --site-container2:    #3B3E32;
+  --site-link:          #E2D3A2;
+  --site-link-hover-bg: #5D5940;
+  --site-footer:        #2A2820;
+  --site-highlight:     #C0A85F;
+  --site-form-bg:       #4B4835;
+  --site-accent:        #A88F49;
+  --site-accent-press:  #877233;
+  --site-field-bg:      #434031;
+  --site-field-border:  #5B5742;
+}
+
+/* ---------------- base ---------------- */
+html, body { margin: 0; }
+body {
+  background-color: var(--site-bg);
+  font-family: var(--site-body);
+  color: var(--site-text);
+}
+
+/* tablet: keep the wordmark and all nav links on one row */
+@media (min-width: 761px) and (max-width: 1024px) {
+  .kx-nav { gap: 12px !important; }
+  .kx-nav a { font-size: 18px !important; padding: 6px 2px !important; }
+}
+/* responsive nav */
+@media (max-width: 760px) {
+  .kx-burger { display: inline-flex !important; }
+  .kx-nav {
+    display: none !important; width: 100%; flex-direction: column;
+    gap: 4px !important; margin-top: 10px;
+  }
+  .kx-nav[data-open="true"] { display: flex !important; }
+}
