@@ -39,14 +39,14 @@
     .kx-contact-row > a, .kx-contact-row > span:not(:first-child), .kx-contact-row > span a { font-size: 16px !important; line-height: 1.55 !important; }
     main > .kx-fullscreen-sec, main > .kx-contact-band { min-height: 100dvh !important; height: auto !important; box-sizing: border-box !important; padding-top: var(--kx-header-h, 61px) !important; display: flex !important; flex-direction: column !important; justify-content: center !important; }
     main > .kx-fullscreen-sec > .kx-sec-media { flex: 1 1 0 !important; min-height: 240px !important; height: auto !important; }
-    main > .kx-fullscreen-sec > .kx-sec-media:has(.kx-lanyard-drop) { --lh: min(58dvh, 560px); flex: 0 0 auto !important; height: var(--lh) !important; margin-bottom: calc(var(--lh) * -.15 - 24px) !important; }
+    main > .kx-fullscreen-sec > .kx-sec-media:has(.kx-lanyard-drop) { --lh: min(58dvh, 560px); flex: 0 0 auto !important; height: var(--lh) !important; margin-bottom: calc(var(--lh) * -.15 + 36px) !important; }
     @media (min-width: 600px) { main > .kx-fullscreen-sec > .kx-sec-media:has(.kx-lanyard-drop) { --lh: min(64dvh, 720px); } }
     main > .kx-fullscreen-sec > .kx-sec-media:has(.kx-lanyard-drop) + .kx-two-col { align-items: start !important; align-content: start !important; padding-top: 0 !important; }
     main > .kx-marquee + .kx-fullscreen-sec { padding-top: 0 !important; min-height: calc(100dvh - var(--kx-header-h, 61px) - 55px) !important; }
     main > .kx-marquee + .kx-fullscreen-sec:not(:has(.kx-lanyard-drop)) { padding-top: 40px !important; }
     main > .kx-fullscreen-sec > .kx-sec-media + .kx-two-col { flex: 0 0 auto; padding-bottom: 28px !important; }
     /* polaroids: size the box to the cards so the text sits right under them */
-    main > .kx-fullscreen-sec > .kx-sec-media:has(img[src*="polaroid"]) { flex: 0 0 auto !important; height: calc(min(47vw, 416px) * 1.3) !important; margin-bottom: -56px !important; }
+    main > .kx-fullscreen-sec > .kx-sec-media:has(img[src*="polaroid"]) { flex: 0 0 auto !important; height: calc(min(47vw, 416px) * 1.3) !important; margin-bottom: -20px !important; }
     main > .kx-fullscreen-sec:has(> .kx-sec-media img[src*="polaroid"]) { justify-content: flex-start !important; min-height: 0 !important; padding-bottom: 32px !important; }
     main > .kx-fullscreen-sec > .kx-sec-media:has(img[src*="polaroid"]) + .kx-two-col { margin: 0 !important; }
     main > .kx-fullscreen-sec:has(.kc-tvs) { min-height: 0 !important; justify-content: flex-start !important; }
@@ -543,7 +543,8 @@
      so veil it with a scrim in the page colour instead. */
   .kx-stack-sec::after,.kx-fullscreen-sec::after{content:"";position:absolute;inset:0;z-index:5;
     pointer-events:none;background:var(--site-bg);opacity:calc(var(--kx-cover) * .92)}
-  @media (max-width:720px){.kx-stack-sec,.kx-fullscreen-sec{position:relative !important;top:auto !important;--kx-cover:0 !important}}
+  /* phones and tablets (iPad too, in either orientation): no pinning or cover fade — one continuous page */
+  @media (max-width:1180px),(hover:none) and (pointer:coarse){.kx-stack-sec,.kx-fullscreen-sec{position:relative !important;top:auto !important;--kx-cover:0 !important}.kx-stack-sec::after,.kx-fullscreen-sec::after{display:none !important}}
   @media (prefers-reduced-motion:reduce){.kx-stack-sec,.kx-fullscreen-sec{--kx-cover:0 !important}}
   /* the last panel on a page scrolls away normally so the footer arrives on its
      own instead of riding up pinned together with it */
@@ -1150,7 +1151,7 @@
   <script>
   (function () {
     var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-    if (!fine || window.matchMedia('(max-width:720px)').matches ||
+    if (!fine || window.matchMedia('(max-width:1180px), (hover:none) and (pointer:coarse)').matches ||
         window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
 
     var target = window.scrollY, current = window.scrollY, running = false, self = false;
