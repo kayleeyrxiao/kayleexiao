@@ -65,7 +65,7 @@
   // are served together; writes go through window.omelette.writeFile, which
   // the host allowlists to *.state.json basenames only.
   const subs = new Set();
-  let slots = {};
+  let slots = Object.assign({}, window.__IMAGE_SLOTS || {});
   // ids explicitly cleared before the sidecar fetch resolved — otherwise
   // the merge below can't tell "never set" from "just deleted" and would
   // resurrect the sidecar's stale value.
@@ -75,6 +75,7 @@
 
   function load() {
     if (loadP) return loadP;
+    if (window.__IMAGE_SLOTS) { loaded = true; loadP = Promise.resolve(); return loadP; }
     loadP = fetch(STATE_FILE)
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {
@@ -602,7 +603,7 @@
       // data:image/ URLs from it. The `src` attribute is author-controlled
       // (Claude wrote it into the HTML) so it passes through unchanged.
       let stored = this.id ? getSlot(this.id) : this._local;
-      if (stored && stored.u && !/^data:image\//i.test(stored.u)) stored = null;
+      if (stored && stored.u && !/^(data:image\/|assets\/slots\/)/i.test(stored.u)) stored = null;
       const srcAttr = this.getAttribute('src') || '';
       this._userUrl = (stored && stored.u) || null;
       const url = this._userUrl || srcAttr;

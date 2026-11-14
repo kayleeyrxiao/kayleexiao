@@ -44,6 +44,9 @@
   document.body.appendChild(el);
   var html = document.documentElement, prevOv = html.style.overflow;
   html.style.overflow = 'hidden';
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  scrollTo(0, 0);
 
   var disc = el.querySelector('.kxi-disc'), spin = el.querySelector('.kxi-spin'), hint = el.querySelector('.kxi-hint'),
     time = el.querySelector('.kxi-time'), clock = el.querySelector('.kxi-clock');
@@ -123,7 +126,7 @@
     var e = p * p * (3 - 2 * p);
     /* the hole flies onto the portrait's eye (51% across, 30.8% down the cutout) wherever the layout puts it */
     var por = document.querySelector('.kx-hero-portrait'), hx = cx, hy = cy;
-    if (por) { var pr = por.getBoundingClientRect(); if (pr.height > 0) { var ee = innerWidth <= 1180 ? 1 : e; hx = cx + (pr.left + pr.width * .51 - cx) * ee; hy = cy + (pr.top + pr.height * .308 - cy) * ee; } }
+    if (por) { var pr = por.getBoundingClientRect(); if (pr.height > 0 && pr.width > 0) { if (scrollY !== 0 && !done) scrollTo(0, 0); var ee = innerWidth <= 1180 ? 1 : e; hx = cx + (pr.left + pr.width * .51 - cx) * ee; hy = cy + (pr.top + pr.height * .308 - cy) * ee; } }
     disc.style.left = hx + 'px'; disc.style.top = hy + 'px';
     el.style.setProperty('--ex', hx.toFixed(1) + 'px'); el.style.setProperty('--ey', hy.toFixed(1) + 'px');
     var scale = Math.exp(Math.log(46) * Math.pow(p, 1.6));
